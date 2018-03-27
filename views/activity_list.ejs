@@ -1,0 +1,19 @@
+<%- layout('layout.ejs') %>
+<sub>
+    <a href='/'>Home</a><br/><br/>
+    <a href='/activityAPI/activity/create'>Create new activity</a>
+</sub>
+<main>
+    <br/>
+    <h2>Activities (<%= activitys.length  %>)</h2>
+    <table>
+        <tr><th>Activity Name</th><th>Create Date</th><th>Desctiption</th></tr>
+        <% for(var i=0; i<activitys.length; i++) { %>
+            <tr>
+                <td><a href='/activityAPI/activity/<%= activitys[i].id %>'><%= activitys[i].activity_name %></a></td>
+                <td><%= activitys[i].create_date_formatted %></td>
+                <td><%= activitys[i].description %></td>
+            </tr>
+        <% } %>
+    </table>
+</main>

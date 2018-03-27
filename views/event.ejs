@@ -1,0 +1,50 @@
+<%- layout('layout.ejs') %>
+<sub>
+    <a href='/'>Home</a><br/><br/>
+    <a href='/eventAPI/events/'>Events</a>
+</sub>
+<main>
+    <section>
+    <h2>New Event</h2>
+    <form name="event_form" method="POST" action="/eventAPI/event/create">
+    <table>
+        <tr>
+            <td>Activity Name</td>
+            <td>
+                <select name="activity" >
+                    <option></option>
+                    <% activitys.forEach(function (activity) { %>
+                    <option value="<%= activity.id %>"> <%= activity.activity_name %>
+                    <% }) %>
+                  </option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td><input type="date" name="event_date" ></td>
+        </tr> 
+        <tr>
+            <td>Start Hour</td>
+            <td><input type="time" name="start_hour" ></td>
+        </tr>   
+        <tr>
+            <td>End Hour</td>
+            <td><input type="time" name="end_hour" ></td>
+        </tr>        
+        <tr>
+            <td>Is Active</td>
+            <td>
+                <input type="checkbox" name="isActive" >
+            </td>
+        </tr>        
+        
+        <tr>
+            <td><input type="submit" name="save" value="Save" ></td>
+            <td colspan="2"><input type="submit" name="save" value="Cancel" ></td>
+        </tr>
+    </table>
+    </form>
+</section> 
+ </main>
+ 

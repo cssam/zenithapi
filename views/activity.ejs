@@ -1,0 +1,26 @@
+<%- layout('layout.ejs') %>
+<sub>
+    <a href='/'>Home</a><br/><br/>
+    <a href='/activityAPI/activitys/'>Activities</a>
+</sub>
+<main>
+    <section>
+    <h2>New Activity</h2>
+    <form name="form1" method="POST" action="/activityAPI/activity/create">
+    <table>
+        <tr>
+            <td>Activity Name</td>
+            <td><input type="text" name="activity_name" ></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><input type="text" name="description" ></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="save" value="Save" ></td>
+            <td><input type="submit" name ="save" value="Cancel" ></td>
+        </tr>
+    </table>
+    </form>
+</section>
+ </main>

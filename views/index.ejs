@@ -1,0 +1,23 @@
+<%- layout('layout.ejs') %>
+<sub>
+    <a href="/activityAPI/activitys">Manage Activities(<%= data.activty_count %>)</a></br></br>
+    <a href="/eventAPI/events">Manage Events (<%= data.event_count  %>) </a></br>
+</sub>
+<main>
+    <section>
+        <h3>Active Events (<%= events.length  %>)</h3>
+        <br/>
+        <table>
+            <tr><th>Activity</th><th>Event Date</th><th>Start Hour</th><th>End Hour</th></tr>
+            <% for(var i=0; i<events.length; i++) { %>
+                <tr>
+                    <td><%= events[i].activity.activity_name %></td>
+                    <td><%= events[i].event_date_formatted %></td>
+                    <td><%= events[i].start_hour %></td>
+                    <td><%= events[i].end_hour %></td>
+                    
+                </tr>
+            <% } %>
+        </table>
+    </section>
+</main>

@@ -1,0 +1,28 @@
+<%- layout('layout.ejs') %>
+<sub>
+    <a href='/'>Home</a><br/><br/>
+    <a href='/eventAPI/event/create'>Create new event</a>
+</sub>
+<main>
+    <section>
+    <br/>
+    <h2>Events (<%= events.length  %>)</h2>
+    <br/>
+    <table>
+        <tr><th>Activity Name</th><th>Event Date</th><th>Start Hour</th><th>End Hour</th><th>Is Active</th></tr>
+        <% for(var i=0; i<events.length; i++) { %>
+            <tr>
+                <td>
+                    <a href='/eventAPI/event/<%= events[i].id %>'>
+                        <%= events[i].activity.activity_name %>
+                    </a>    
+                </td>
+                <td><%= events[i].event_date_formatted %></td>
+                <td><%= events[i].start_hour %></td>
+                <td><%= events[i].end_hour %></td>
+                <td><%= events[i].isActive %></td>
+        </tr>
+        <% } %>
+    </table>
+</section>
+</main>

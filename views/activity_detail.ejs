@@ -1,0 +1,38 @@
+<%- layout('layout.ejs') %>
+<sub>
+    <a href='/'>Home</a><br/><br/>
+    <a href='/activityAPI/activitys/'>Activities</a><br/><br/>
+    <a href='/activityAPI/activity/create' >Create new activity</a><br/>
+    <h4><a href='/activityAPI/activity/<%= activity.id %>/update'>Update</a></h4>
+</sub>
+<main>
+    <br/>
+    <h2>Activity</h2>
+    <table>
+        <tr>
+            <td>Name </td>
+            <td><%= activity.activity_name %></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><%= activity.description %> </td>
+        </tr>   
+        <tr>
+            <td>Create Date</td>
+            <td><%= activity.create_date_formatted%> </td>
+        </tr>
+    </table>
+    
+ </main>
+ <aside>
+        <h2>Activities (<%= activitys.length  %>)</h2>
+        <table>
+            <% for(var i=0; i<activitys.length; i++) { %>
+                <tr><td>
+                        <a href='/activityAPI/activity/<%= activitys[i].id %>'>
+                            <%= activitys[i].activity_name %>
+                        </a>    
+                </td></tr>
+            <% } %>
+        </table>
+ </aside>

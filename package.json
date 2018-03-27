@@ -1,0 +1,27 @@
+{
+  "name": "zenithapi",
+  "version": "1.0.0",
+  "description": "Chandima Samaraweera Assignment",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "author": "Chandima Samaraweera",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.16.2",
+    "express-validator": "^4.3.0",
+    "moment": "^2.19.3",
+    "mongojs": "^2.4.1",
+    "mongoose": "^4.13.5",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {}
+}
